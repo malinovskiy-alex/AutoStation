@@ -8,9 +8,8 @@ app.Order = Backbone.Model.extend({
         clientAddress: '',
         recipientName: '',
         recipientAddress: '',
-        status: 'Dispatch',
+        orderStatus: 'Dispatch',
         productName: '',
-        productWeight: 0,
-        timeToSolve: 0
+        productWeight: 0
     }
 })
