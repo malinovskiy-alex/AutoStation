@@ -107,28 +107,29 @@
                 </div>
             </div>-->
             <div class="form-group">
-                <button type="submit" class="btn btn-default">Save</button>
+                <button type="submit" id="add" class="btn btn-default">Save</button>
             </div>
         </form>
-    </div>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th data-field="id">Client name</th>
-            <th data-field="name">Client address</th>
-            <th data-field="price">Recipient name</th>
-            <th data-field="price">Recipient address</th>
-            <th data-field="price">Product name</th>
-            <th data-field="price">Product weight</th>
-            <th data-field="price">Status</th>
-            <th data-field="price">Edit</th>
-            <th data-field="price">Delete</th>
-        </tr>
-        </thead>
-        <tbody id="orders">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th data-field="id">Client name</th>
+                <th data-field="name">Client address</th>
+                <th data-field="price">Recipient name</th>
+                <th data-field="price">Recipient address</th>
+                <th data-field="price">Product name</th>
+                <th data-field="price">Product weight</th>
+                <th data-field="price">Status</th>
+                <th data-field="price">Edit</th>
+                <th data-field="price">Delete</th>
+            </tr>
+            </thead>
+            <tbody id="orders">
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
 <script id="orderView" type="text/template">
@@ -143,7 +144,7 @@
         <button class="btn btn-block">Edit</button>
     </td>
     <td>
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger delete">Delete</button>
     </td>
 </script>
 <!-- /container -->

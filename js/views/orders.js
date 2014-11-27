@@ -3,10 +3,14 @@
  */
 var app = app || {}
 app.OrdersView = Backbone.View.extend({
-    el: '#orders',
+    el: '.container',
+    events: {
+        'click #add': 'addOrder'
+    },
     initialize: function (initialOrders) {
         this.collection = new app.OrderList(initialOrders);
         this.render();
+        this.listenTo(this.collection, "add", this.renderOrder);
     },
     render: function () {
         this.collection.each(function (item) {
@@ -17,6 +21,16 @@ app.OrdersView = Backbone.View.extend({
         var orderView = new app.OrderView({
             model: item
         });
-        this.$el.append(orderView.render().el)
+        $("#orders").append(orderView.render().el);
+    },
+    addOrder: function (e) {
+        e.preventDefault();
+        var formData = {};
+        $("#order input").each(function (i, el) {
+            if ($(el).val() != '') {
+                formData[el.id] = $(el).val()
+            }
+        });
+        this.collection.add(new app.Order(formData));
     }
-})
+});
